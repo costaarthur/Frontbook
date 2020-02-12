@@ -30,16 +30,70 @@
 
 import React, { Component } from 'react';
 
+import PostItem from './PostItem'
+
 import './styles.css';
 
 class PostList extends Component {
   state = {
     newPost: '',
     posts: [
-      'Post 1',
-      'Post 2',
-      'Post 3',
-      'Post 4'
+      {
+        id: 1,
+        author: {
+          name: "Julio Alcantara",
+          avatar: "http://url-da-imagem.com/imagem.jpg"
+        },
+        date: "04 Jun 2019",
+        content: "Pessoal, alguém sabe se a Rocketseat está contratando?",
+        comments: [
+          {
+            id: 1,
+            author: {
+              name: "Diego Fernandes",
+              avatar: "http://url-da-imagem.com/imagem.jpg"
+            },
+            content: "Conteúdo do comentário"
+          }
+        ]
+      },
+      {
+        id: 2,
+        author: {
+          name: "Julio Alcantara",
+          avatar: "http://url-da-imagem.com/imagem.jpg"
+        },
+        date: "04 Jun 2019",
+        content: "Pessoal, alguém sabe se a Rocketseat está contratando?",
+        comments: [
+          {
+            id: 1,
+            author: {
+              name: "Diego Fernandes",
+              avatar: "http://url-da-imagem.com/imagem.jpg"
+            },
+            content: "Conteúdo do comentário"
+          }
+        ]
+      }, {
+        id: 3,
+        author: {
+          name: "Julio Alcantara",
+          avatar: "http://url-da-imagem.com/imagem.jpg"
+        },
+        date: "04 Jun 2019",
+        content: "Pessoal, alguém sabe se a Rocketseat está contratando?",
+        comments: [
+          {
+            id: 1,
+            author: {
+              name: "Diego Fernandes",
+              avatar: "http://url-da-imagem.com/imagem.jpg"
+            },
+            content: "Conteúdo do comentário"
+          }
+        ]
+      },
     ]
   }
 
@@ -58,13 +112,23 @@ class PostList extends Component {
     })
   }
 
+  handleDelete = (post) => {
+    this.setState({ posts: this.state.posts.filter(t => t !== post) })
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <h1>Nome da pessoa: {this.state.newPost}</h1>
-        <ul>
-          {this.state.posts.map(post => <li key={post}>{post}</li>)}
-        </ul>
+        <div className="postlist">
+          {this.state.posts.map(post => (
+            <PostItem
+              key={post}
+              post={post.id} //{...post}
+              onDelete={() => this.handleDelete(post)}
+            />
+          ))}
+        </div>
         <input
           type="text"
           onChange={this.handleInputChange}

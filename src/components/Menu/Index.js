@@ -4,31 +4,20 @@ import { Nav, NavItem, Navbar, Badge } from 'react-bootstrap';
 class Menu extends React.Component {
   render() {
     return (
-      <Navbar inverse fixedTop>
+      <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="/">React-Bootstrap</a>
+            <a href="#home">Brand</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href="/about">
-              About
-      </NavItem>
-            <NavItem eventKey={2} href="/contacts">
-              Contact Us
-      </NavItem>
-
-          </Nav>
-          <Nav pullRight>
-            <NavItem eventKey={1} href="/perfil">
-              Meu Perfil
-      </NavItem>
-            <NavItem eventKey={2} href="/page">
-              O<Badge className="badge">1</Badge>
-            </NavItem>
-          </Nav>
+          <Navbar.Form pullLeft>
+            <FormGroup>
+              <FormControl type="text" placeholder="Search" />
+            </FormGroup>{' '}
+            <Button type="submit">Submit</Button>
+          </Navbar.Form>
         </Navbar.Collapse>
       </Navbar>
     );

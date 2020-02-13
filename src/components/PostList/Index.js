@@ -121,10 +121,11 @@ class PostList extends Component {
       <form onSubmit={this.handleSubmit}>
         <h1>Nome da pessoa: {this.state.newPost}</h1>
         <div className="postlist">
-          {this.state.posts.map(post => (
+          {this.state.posts.map((post, index) => (
             <PostItem
-              key={post}
-              post={post.id} //{...post}
+              key={post.id}
+              post={post.id}
+              //{...post}
               onDelete={() => this.handleDelete(post)}
             />
           ))}

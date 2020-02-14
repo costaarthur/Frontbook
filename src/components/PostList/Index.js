@@ -52,7 +52,7 @@ class PostList extends Component {
         id: 1,
         author: {
           name: "Gleice Swan",
-          avatar: < p > <img className="avatar1" img align="left" width="40" src={avatar1} /></p>
+          avatar: < p > <img className="avatarpost" align="left" src={avatar1} /></p>
         },
         date: "04 Jun 2019",
         content: "Pessoal, alguém sabe se a Rocketseat está contratando?",
@@ -61,9 +61,9 @@ class PostList extends Component {
             id: 1,
             author: {
               name: "Diego Izuku",
-              avatar: <p><img className="avatar2" img align="left" width="40" src={avatar2} /></p>
+              avatar: <p><img className="avatarcoment" align="left" src={avatar2} /></p>
             },
-            content: "Conteúdo do comentário 1"
+            content: "Conteúdo do comentário 1 grande para poder testar se o css está funcionando corretamente. Testando testando testando testando testando testando testando testando testando."
           }
         ]
       },
@@ -71,7 +71,7 @@ class PostList extends Component {
         id: 2,
         author: {
           name: "Julia Might",
-          avatar: < p > <img className="avatar1" img align="left" width="40" src={avatar3} /></p>
+          avatar: < p > <img className="avatarpost" align="left" src={avatar3} /></p>
         },
         date: "04 Jun 2019",
         content: "Deve que tá",
@@ -80,7 +80,7 @@ class PostList extends Component {
             id: 1,
             author: {
               name: "Fred Aizawa",
-              avatar: <p><img className="avatar2" img align="left" width="40" src={avatar4} /></p>
+              avatar: <p><img className="avatarcoment" align="left" src={avatar4} /></p>
             },
             content: "Conteúdo do comentário 2"
           }
@@ -89,7 +89,7 @@ class PostList extends Component {
         id: 3,
         author: {
           name: "Jack Scott",
-          avatar: < p > <img className="avatar1" img align="left" width="40" src={avatar5} /></p>
+          avatar: < p > <img className="avatarpost" align="left" src={avatar5} /></p>
         },
         date: "04 Jun 2019",
         content: "For sure!",
@@ -98,7 +98,7 @@ class PostList extends Component {
             id: 1,
             author: {
               name: "John Katsuki",
-              avatar: <p><img className="avatar2" img align="left" width="40" src={avatar6} /></p>
+              avatar: <p><img className="avatarcoment" align="left" src={avatar6} /></p>
             },
             content: "Conteúdo do comentário 3"
           }
@@ -153,30 +153,32 @@ class PostList extends Component {
   //   }
   // }
 
+  // console.log(post.comments.length)
   render() {
     const { posts } = this.state;
     return (
-      <div id="postlist">
-        {posts.map((post, i) => (
-          < div className="whitesquare" key={post.id} >
-            {/* <p>{post.id}</p> */}
-            {/* < p > <img className="avatar1" img align="left" width="40" src={avatar1} /></p> */}
-            <p>{post.author.avatar}</p>
-            <p className="nome">{post.author.name}</p>
-            <p className="data" >{post.date}</p>
-            <p className="postagem">{post.content}</p>
+      < div id="postlist" >
+        {
+          posts.map((post, i) => (
+            < div className="whitesquare" key={post.id} >
+              {/* <p>{post.id}</p> */}
+              {/* < p > <img className="avatar1" img align="left" width="40" src={avatar1} /></p> */}
+              {post.author.avatar}
+              <p className="nome">{post.author.name}</p>
+              <p className="data" >{post.date}</p>
+              <p className="postagem">{post.content}</p>
 
-            <div className="comentarios">
-              {/* <p>id do primeiro comentário: {post.comments[0].id}</p> */}
-              {/* <p><img className="avatar2" img align="left" width="40" src={avatar2} /></p> */}
-              <p>{post.comments[0].author.avatar}</p>
-              <div className="nomeecomentario" >
-                <p className="nomecomentando">{post.comments[0].author.name}</p>
-                < p className="comment" > {post.comments[0].content}</p>
-              </div>
+              <div className="comentarios">
+                {post.comments[0].author.avatar}
+                {/* <p>id do primeiro comentário: {post.comments[0].id}</p> */}
+                {/* <p><img className="avatar2" img align="left" width="40" src={avatar2} /></p> */}
+                <div className="nomeecomentario" >
+                  <p className="nomecomentando" > <b>{post.comments[0].author.name}</b>
+                    {post.comments[0].content}</p>
+                </div>
+              </div >
             </div >
-          </div >
-        ))
+          ))
         }
       </div >
     )

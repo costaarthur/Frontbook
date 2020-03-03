@@ -34,7 +34,7 @@ class PostList extends Component {
             id: 1,
             author: {
               name: "Diego Izuku",
-              avatar: <p><img className="avatarcoment" align="left" src={avatar2} /></p>
+              avatar: <p><img className="avatarcomment" align="left" src={avatar2} /></p>
             },
             content: "Conteúdo do comentário 1 grande para poder testar se o css está funcionando corretamente. Teste do teste do teste do teste."
           },
@@ -42,7 +42,7 @@ class PostList extends Component {
             id: 2,
             author: {
               name: "Kate Tokoyami",
-              avatar: <p><img className="avatarcoment" align="left" src={avatar22} /></p>
+              avatar: <p><img className="avatarcomment" align="left" src={avatar22} /></p>
             },
             content: "Testando se o segundo comentário também vai entrar nesse post maravilhoso"
           },
@@ -50,7 +50,7 @@ class PostList extends Component {
             id: 3,
             author: {
               name: "Leonardo Ochako",
-              avatar: <p><img className="avatarcoment" align="left" src={avatar23} /></p>
+              avatar: <p><img className="avatarcomment" align="left" src={avatar23} /></p>
             },
             content: "Testando o comentário 3 testando testando testando testando testando testando testando testando testando testando testando testando."
           }
@@ -69,7 +69,7 @@ class PostList extends Component {
             id: 1,
             author: {
               name: "Fred Aizawa",
-              avatar: <p><img className="avatarcoment" align="left" src={avatar4} /></p>
+              avatar: <p><img className="avatarcomment" align="left" src={avatar4} /></p>
             },
             content: "Conteúdo do comentário 2"
           }
@@ -87,7 +87,7 @@ class PostList extends Component {
             id: 1,
             author: {
               name: "John Katsuki",
-              avatar: <p><img className="avatarcoment" align="left" src={avatar6} /></p>
+              avatar: <p><img className="avatarcomment" align="left" src={avatar6} /></p>
             },
             content: "O conteúdo do comentário desse jovem fica aqui."
           },
@@ -95,7 +95,7 @@ class PostList extends Component {
             id: 2,
             author: {
               name: "Patrick Shigaraki",
-              avatar: <p><img className="avatarcoment" align="left" src={avatar62} /></p>
+              avatar: <p><img className="avatarcomment" align="left" src={avatar62} /></p>
             },
             content: "Conteúdo do comentário 3"
           }
